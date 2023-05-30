@@ -1,0 +1,19 @@
+{
+    "local": {
+        "driver" : "pg",
+        "host": {"ENV" : "DB_HOSTNAME"},
+        "port" : {"ENV" : "DB_PORT"},
+        "database" : {"ENV" : "DB_NAME"},
+        "password" : {"ENV" : "DB_PASSWORD"},
+        "user" : {"ENV" : "DB_USERNAME"}
+    },
+    "prod" : {
+        "driver" : "pg",
+        "host": {"ENV" : "PROD_DB_HOSTNAME"},
+        "port" : {"ENV" : "PROD_DB_PORT"},
+        "database" : {"ENV" : "PROD_DB_NAME"},
+        "password" : {"ENV" : "PROD_DB_PASSWORD"},
+        "user" : {"ENV" : "PROD_DB_USERNAME"}
+    },
+    "sql-file" : true
+}

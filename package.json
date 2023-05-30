@@ -1,0 +1,17 @@
+{
+  "name": "bayond-db-changelog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "abed47 <abed472011@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "up:local": "db-migrate up --env local",
+    "down:local": "db-migrate down --env local",
+    "up:prod": "db-migrate up --env prod",
+    "create:release": "db-migrate create "
+  },
+  "dependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.3.0"
+  }
+}
