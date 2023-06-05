@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS assessment_skills (
   ref_id_skills INTEGER NOT NULL,
   "priority" VARCHAR(50),
   PRIMARY KEY (id_assessment_skills),
-  CHECK "priority" IN ('MUST_HAVE', 'GOOD_TO_HAVE'),
+  CHECK ("priority" IN ('MUST_HAVE', 'GOOD_TO_HAVE')),
   FOREIGN KEY (ref_id_skills) REFERENCES skill (id_skill),
   FOREIGN KEY (ref_id_assessment) REFERENCES assessment (id_assessment)
 );
@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS assessment_flow (
   id_assessment_flow SERIAL,
   ref_id_assessment	INTEGER NOT NULL,
   ref_id_assessment_type INTEGER NOT NULL,
-  proceed_if_failed BOOLEAN DEFAULT true,
-  order INTEGER NOT NULL,
+  proceed_if_failed BOOLEAN NOT NULL,
+  "order" INTEGER NOT NULL,
   PRIMARY KEY (id_assessment_flow),
   FOREIGN KEY (ref_id_assessment) REFERENCES assessment (id_assessment),
   FOREIGN KEY (ref_id_assessment_type) REFERENCES assessment_type (id_assessment_type)
